@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import platform
 
 from ctypes import c_double, c_int, POINTER, Structure, CDLL, byref
 
@@ -12,7 +13,10 @@ except:
          FrenetReturnValues
 
 try:
-    cdll = CDLL("frenet_optimal_trajectory_planner/build/libFrenetOptimalTrajectory.so")
+    if platform.system() == 'Windows':
+        cdll = CDLL("frenet_optimal_trajectory_planner/build/libFrenetOptimalTrajectory.so")
+    elif platform.system() == 'Darwin':
+        cdll = CDLL(os.path.join(os.getcwd(), "../frenet_optimal_trajectory_planner/build/libFrenetOptimalTrajectory.dylib"))
 except:
     cdll = CDLL("{}/dependencies/frenet_optimal_trajectory_planner/"
                 "build/libFrenetOptimalTrajectory.so".format(
