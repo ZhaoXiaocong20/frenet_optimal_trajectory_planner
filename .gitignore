@@ -7,4 +7,5 @@ dist/
 cmake-build-debug/
 *.pyc
 *.jpg
+.DS_STORE
 .clang-format
