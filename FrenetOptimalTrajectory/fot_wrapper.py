@@ -13,10 +13,10 @@ except:
          FrenetReturnValues
 
 try:
-    if platform.system() == 'Windows':
-        cdll = CDLL("frenet_optimal_trajectory_planner/build/libFrenetOptimalTrajectory.so")
-    elif platform.system() == 'Darwin':
+    if platform.system() == 'Darwin':
         cdll = CDLL(os.path.join(os.getcwd(), "../frenet_optimal_trajectory_planner/build/libFrenetOptimalTrajectory.dylib"))
+    else:
+        cdll = CDLL("frenet_optimal_trajectory_planner/build/libFrenetOptimalTrajectory.so")
 except:
     cdll = CDLL("{}/dependencies/frenet_optimal_trajectory_planner/"
                 "build/libFrenetOptimalTrajectory.so".format(
