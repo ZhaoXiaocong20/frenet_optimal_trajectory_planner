@@ -1,3 +1,6 @@
+### Changelog
+	20220718 - This project is now available to macOS by using build_macOS.sh at building step.
+
 # Frenet Optimal Trajectory
 ![FrenetOptimalTrajectory Demo](img/fot.gif)
 ![FrenetOptimalTrajectory Demo](img/fot2.gif)
